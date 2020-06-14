@@ -32,3 +32,5 @@ elif P > 0 and I > F:
 elif P < 0 and I < F:
     P *= -1
 contador(I, F, P)
+
+
