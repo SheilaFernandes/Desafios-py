@@ -1,16 +1,23 @@
 def notas(*valores, sit=False):
+    """
+    -> Função para analisar notas e situações
+    :param valores: notas a serem analisadas
+    :param sit: valor apcional para visualizar a situação do aluno
+    :return: retorna a quantidade de notas analisadas, maior nota, menor nota, media das notas e a situação do aluno
+    """
+
     dados = dict()
     dados['total'] = len(valores)
     dados['maior'] = max(valores)
     dados['menor'] = min(valores)
-    dados['média'] = dados['total']/len(valores)
+    dados['média'] = sum(valores)/len(valores)
 
-    if sit == True:
+    if sit:
         if dados['média'] >= 7 :
             dados['situação'] = 'Boa'
-        elif 6<= dados['média']> 7:
+        elif dados['média']>= 5:
             dados['situação'] = 'Razoável'
         else:
             dados['situação'] = 'Ruim'
     return dados
-print(notas(6,4,20, sit=True))
+print(notas(5.5,2.5 ,8.5, sit=True))
